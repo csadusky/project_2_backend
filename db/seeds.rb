@@ -2,6 +2,14 @@ Line.delete_all
 
 Line.create!(color: 'red', direction: 'inbound')
 Line.create!(color: 'red', direction: 'outbound')
+Line.create!(color: 'green', direction: 'inbound')
+Line.create!(color: 'green', direction: 'outbound')
+Line.create!(color: 'blue', direction: 'inbound')
+Line.create!(color: 'blue', direction: 'outbound')
+Line.create!(color: 'orange', direction: 'inbound')
+Line.create!(color: 'orange', direction: 'outbound')
+Line.create!(color: 'silver', direction: 'inbound')
+Line.create!(color: 'silver', direction: 'outbound')
 
 User.create!(username: 'csadusky', email:'courtneysadusky@gmail.com')
 User.create!(username: 'jalmeida', email:'joshalmeida@gmail.com')
