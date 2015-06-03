@@ -11,8 +11,8 @@ Line.create!(color: 'orange', direction: 'outbound')
 Line.create!(color: 'silver', direction: 'inbound')
 Line.create!(color: 'silver', direction: 'outbound')
 
-User.create!(username: 'csadusky', email:'courtneysadusky@gmail.com')
-User.create!(username: 'jalmeida', email:'joshalmeida@gmail.com')
+User.create!(username: 'csadusky', password_digest: 'holly1810')
+User.create!(username: 'jalmeida', password_digest:'josh1234')
 
 rline = Line.first
 court = User.first
