@@ -43,3 +43,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
+gem 'active_model_serializers'
+
+gem 'bcrypt', '~> 3.1.7'

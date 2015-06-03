@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150601130540) do
   create_table "lines", force: :cascade do |t|
     t.string   "color"
     t.string   "direction"
-    t.string   "cart"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,14 +38,10 @@ ActiveRecord::Schema.define(version: 20150601130540) do
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
-    t.integer  "line_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "users", ["line_id"], name: "index_users_on_line_id", using: :btree
-
   add_foreign_key "comments", "lines"
   add_foreign_key "comments", "users"
-  add_foreign_key "users", "lines"
 end

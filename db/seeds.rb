@@ -14,6 +14,13 @@ Line.create!(color: 'silver', direction: 'outbound')
 User.create!(username: 'csadusky', email:'courtneysadusky@gmail.com')
 User.create!(username: 'jalmeida', email:'joshalmeida@gmail.com')
 
+rline = Line.first
+court = User.first
+josh = User.second
+
+rline.comments.create!(user: court, post:"redline is all backed up, should have walked")
+rline.comments.create!(user: josh, post:"walk with if you can")
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
