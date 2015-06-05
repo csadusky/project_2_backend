@@ -11,8 +11,8 @@ Line.create!(color: 'orange', direction: 'outbound')
 Line.create!(color: 'silver', direction: 'inbound')
 Line.create!(color: 'silver', direction: 'outbound')
 
-User.create!(username: 'csadusky', password_digest: 'holly1810')
-User.create!(username: 'jalmeida', password_digest:'josh1234')
+User.create!(username: 'csadusky', password_digest: 'holly1810', password_confirmation: nil)
+User.create!(username: 'jalmeida', password_digest:'josh1234', password_confirmation: nil)
 
 rline = Line.first
 court = User.first

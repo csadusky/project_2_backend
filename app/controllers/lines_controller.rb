@@ -1,4 +1,4 @@
-class LinesController < ApplicationController
+class LinesController < AuthController
 
   def index
     @lines = Line.all

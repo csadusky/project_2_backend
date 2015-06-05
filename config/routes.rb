@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #root 'lines#index'
-
+  post '/login' => 'auth#login'
+  post '/register' => 'auth#register'
 
 
   resources :lines, except: [:new, :edit] do
