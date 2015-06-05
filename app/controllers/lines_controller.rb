@@ -1,4 +1,4 @@
-class LinesController < AuthController
+class LinesController < OpenReadController
 
   def index
     @lines = Line.all

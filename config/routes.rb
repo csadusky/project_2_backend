@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   #root 'lines#index'
   post '/login' => 'auth#login'
   post '/register' => 'auth#register'
+  delete '/logout' => 'auth#logout'
 
 
   resources :lines, except: [:new, :edit] do

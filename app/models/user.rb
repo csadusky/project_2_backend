@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true
 
+  def logout
+    new_token
+  end
+
   def authenticate_with_new_token(password)
     authenticate_without_new_token(password) && new_token
   end

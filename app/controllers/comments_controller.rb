@@ -1,4 +1,4 @@
-class CommentsController < AuthController
+class CommentsController < OpenReadController
 
   before_action :set_lines
 
@@ -15,6 +15,8 @@ class CommentsController < AuthController
   def create
     @comment = @line.comments.build(comment_params)
 
+    @comment.user = current_user
+
     if @comment.save
       render json: @comment, status: :created
     else
@@ -25,7 +27,7 @@ class CommentsController < AuthController
   private
 
   def comment_params
-    params.require(:comment).permit(:post, :emoji, :user_id)
+    params.require(:comment).permit(:post, :emoji)
   end
 
   def set_lines
