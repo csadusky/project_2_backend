@@ -1,7 +1,7 @@
 class AuthController < ApplicationController
 
   def register
-    @user = User.new(login_params.merge(password_confirmation: nil))
+    @user = User.new(register_params)
     if @user.save
       head :created
     else
@@ -13,7 +13,7 @@ class AuthController < ApplicationController
     credentials = login_params
     user = User.find_by username: credentials[:loginUsername]
     if user && user.authenticate(credentials[:loginPassword])
-      render json: { token: user.token }
+      render json: { token: user.token, username: user.username, id: user.id}
     else
       head :bad_request
     end
@@ -25,4 +25,9 @@ class AuthController < ApplicationController
   def login_params
     params.require(:credentials).permit(:loginUsername, :loginPassword)
   end
+
+  def register_params
+    params.require(:credentials).permit(:username, :password, :password_confirmation)
+  end
 end
+
