@@ -5,6 +5,7 @@ class CommentsController < OpenReadController
   def index
     @comments = @line.comments
     render json: @comments
+
   end
 
   def show

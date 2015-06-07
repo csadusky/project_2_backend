@@ -3,6 +3,7 @@ class LinesController < OpenReadController
   def index
     @lines = Line.all
     render json: @lines
+
   end
 
   def show
@@ -12,12 +13,6 @@ class LinesController < OpenReadController
 
   def create
     render json: {data: "REQUEST RECEIVED"}
-    # @line = Line.create(params);
-    # if @line.save
-    #   render json: @line
-    # else
-    #   render json: @line.errors
-    # end
   end
 
   private
