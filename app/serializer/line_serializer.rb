@@ -1,5 +1,5 @@
 class LineSerializer < ActiveModel::Serializer
-  attributes :color, :direction, :id
+  attributes :name, :color, :direction, :id #added name
   has_many :comments
 
 end

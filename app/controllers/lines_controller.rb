@@ -17,6 +17,6 @@ class LinesController < OpenReadController
 
   private
    def line_params
-    params.require(:color, :directon)
+    params.require(:name, :color, :directon) #added name
   end
 end

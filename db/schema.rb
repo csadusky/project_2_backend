@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150601130540) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "lines", force: :cascade do |t|
+    t.string   "name"
     t.string   "color"
     t.string   "direction"
     t.datetime "created_at", null: false
