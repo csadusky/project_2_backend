@@ -3,7 +3,6 @@ class CommentSerializer < ActiveModel::Serializer
   has_one :user
 
   def time
-    # object.created_at.strftime('%I:%M %p')
     object.created_at.strftime('%b %e, %l:%M %p')
   end
 end
