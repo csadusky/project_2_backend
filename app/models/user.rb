@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
     authenticate_without_new_token(password) && new_token
   end
 
+  # alias_method_chain :authenticate_without_new_token, :authenticate
   alias_method_chain :authenticate, :new_token
 
   private
 
-  # FIXME: Validate that token doesn't exist? (improbable)
   def set_token
     self.token = SecureRandom.hex(16)
   end
@@ -33,6 +33,6 @@ class User < ActiveRecord::Base
   # expire old token
   def fix_up_token
     # FIXME: token age should be configurable
-    new_token if updated_at < 1.day.ago
+    new_token if updated_at > 1.day.ago
   end
 end
